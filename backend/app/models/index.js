@@ -1,8 +1,10 @@
+require("dotenv").config({ path: `.env.local`, override: true });
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize('echomunchapi', 'root', '', {
+const sequelize = new Sequelize("echomunchapi", "root", "", {
   host: "localhost",
   dialect: "mysql",
-  port: 3308
+  port: 3308,
+  password: process.env.SECRET,
 });
 
 const db = {};
