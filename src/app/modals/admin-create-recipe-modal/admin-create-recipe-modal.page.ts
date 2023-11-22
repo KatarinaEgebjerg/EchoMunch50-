@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NodeJsExpressService } from 'src/app/services/node-js-express-service/node-js-express.service';
+import { NodeJsExpressService } from 'src/app/services/backend/node-js-express.service';
 
 @Component({
   selector: 'app-admin-create-recipe-modal',
@@ -11,32 +11,31 @@ export class AdminCreateRecipeModalPage implements OnInit {
     recipename: '',
     category: '',
     ingredientmeasurement: '',
-    instructions:'',
-    published: false
+    instructions: '',
+    published: false,
   };
   submitted = false;
 
-  constructor(private NodeJsExpressService: NodeJsExpressService) { }
+  constructor(private NodeJsExpressService: NodeJsExpressService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   saveRecipe() {
     const data = {
       recipename: this.recipe.recipename,
       category: this.recipe.category,
       ingredientmeasurement: this.recipe.ingredientmeasurement,
-      instructions: this.recipe.instructions
+      instructions: this.recipe.instructions,
     };
 
-    this.NodeJsExpressService.create(data)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log(error);
-        });
+    this.NodeJsExpressService.create(data).subscribe(
+      (response) => {
+        console.log(response);
+        this.submitted = true;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   newRecipe() {
@@ -45,8 +44,8 @@ export class AdminCreateRecipeModalPage implements OnInit {
       recipename: '',
       category: '',
       ingredientmeasurement: '',
-      instructions:'',
-      published: false
+      instructions: '',
+      published: false,
     };
   }
 }

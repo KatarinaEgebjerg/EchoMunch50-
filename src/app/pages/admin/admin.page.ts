@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController} from '@ionic/angular';
-import { AdminCreateRecipeModalPage} from '../../modals/admin-create-recipe-modal/admin-create-recipe-modal.page';
+import { ModalController } from '@ionic/angular';
+import { AdminCreateRecipeModalPage } from '../../modals/admin-create-recipe-modal/admin-create-recipe-modal.page';
 import { ModalService } from '../../services/modal-service/modal.service';
 import { environment } from 'src/environments/environment';
 import { AdminEditRecipeModalPage } from 'src/app/modals/admin-edit-recipe-modal/admin-edit-recipe-modal.page';
-import { NodeJsExpressService } from 'src/app/services/node-js-express-service/node-js-express.service';
+import { NodeJsExpressService } from 'src/app/services/backend/node-js-express.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe.model';
 
@@ -21,25 +21,24 @@ export class AdminPage implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private NodeJsExpressService: NodeJsExpressService,
-    private router: Router,
-  ) { }
-  
+    private router: Router
+  ) {}
+
   ngOnInit() {
     this.retrieveRecipe();
   }
 
   retrieveRecipe() {
-    this.NodeJsExpressService.getAll()
-      .subscribe(
-        data => {
-          this.recipe = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
+    this.NodeJsExpressService.getAll().subscribe(
+      (data) => {
+        this.recipe = data;
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-
 
   async adminCreateRecipeModal() {
     const modal = await this.modalCtrl.create({
@@ -57,25 +56,22 @@ export class AdminPage implements OnInit {
       cssClass: 'admin-edit-recipe-modal',
       breakpoints: [0, 0.3, 0.65, 0.8],
       componentProps: {
-        recipe: recipe
+        recipe: recipe,
       },
       initialBreakpoint: 0.65,
     });
     await modal.present();
   }
-  
+
   deleteRecipe(recipeid: any) {
-    this.NodeJsExpressService.delete(recipeid)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.router.navigate(['/admin']);
-        },
-        error => {
-          console.log(error);
-        });
-
-}
-
-
+    this.NodeJsExpressService.delete(recipeid).subscribe(
+      (response) => {
+        console.log(response);
+        this.router.navigate(['/admin']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 }
