@@ -1,10 +1,12 @@
-# powerskema
+# EchoMunch50-
 
 ### Requirements
 
 - Node.js and npm
 
 ### Getting started
+
+If you just want to see the project click [here](https://echo-munch50.vercel.app/login)
 
 If you want to continue developing the project run the following command on your local environment:
 
@@ -13,6 +15,8 @@ git clone https://github.com/KatarinaEgebjerg/EchoMunch50-.git
 cd EchoMunch50-
 npm install
 ```
+
+Open http://localhost:8100 with your favorite browser to see the website. For your information, it might take some time for it to compile the project for your first time.
 
 Then, you can run locally in development mode with live reload:
 
@@ -31,8 +35,6 @@ cd backend
 npm install
 npm run server
 ```
-
-Open http://localhost:8100 with your favorite browser to see the website. For your information, it might take some time for it to compile the project for your first time.
 
 ### Practical guidelines
 
