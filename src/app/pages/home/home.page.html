@@ -1,6 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
+      <!-- Image Logo -->
       <ion-img
         src="assets/images/ecoLogo.png"
         alt="Eco munch logo"
@@ -101,10 +102,14 @@
         >
           <ion-row class="ion-align-items-center full-height">
             <ion-col>
-              <ion-img
-                [src]="meal.strMealThumb"
+              <!-- Image -->
+              <img
+                [ngSrc]="meal.strMealThumb"
                 alt="{{ meal.strMeal }}"
                 class="rounded-dish-img"
+                width="140"
+                height="140"
+                priority
               />
             </ion-col>
             <ion-col class="ion-text-center">
@@ -273,10 +278,14 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <ion-img
-                    [src]="meal.strMealThumb"
+                  <!-- image -->
+                  <img
+                    [ngSrc]="meal.strMealThumb"
                     alt="{{ meal.strMeal }}"
-                    class="rounded-dish-img"
+                    [width]="135"
+                    [height]="135"
+                    sizes="(max-width: 150px) 100vw, 50vw"
+                    priority
                   />
                 </ion-col>
                 <ion-col class="ion-text-center">
@@ -342,11 +351,14 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <ion-img
-                    [src]="meal.strMealThumb"
+                  <!-- Image -->
+                  <!-- <img
+                    [ngSrc]="meal.strMealThumb"
                     alt="{{ meal.strMeal }}"
+                    width="137"
+                    height="137"
                     class="rounded-dish-img"
-                  />
+                  /> -->
                 </ion-col>
                 <ion-col class="ion-text-center">
                   <ion-card-header>
