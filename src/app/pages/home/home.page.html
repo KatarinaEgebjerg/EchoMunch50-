@@ -2,11 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <!-- Image Logo -->
-      <ion-img
-        src="assets/images/ecoLogo.png"
-        alt="Eco munch logo"
-        class="logo"
-      ></ion-img>
+      <img src="assets/images/logo50.png" alt="Eco munch logo" class="logo" />
       <h2 class="logoText">Eco Munch</h2>
     </ion-buttons>
 
@@ -107,9 +103,8 @@
                 [ngSrc]="meal.strMealThumb"
                 alt="{{ meal.strMeal }}"
                 class="rounded-dish-img"
-                width="140"
-                height="140"
-                priority
+                [width]="135"
+                [height]="135"
               />
             </ion-col>
             <ion-col class="ion-text-center">
@@ -284,7 +279,6 @@
                     alt="{{ meal.strMeal }}"
                     [width]="135"
                     [height]="135"
-                    sizes="(max-width: 150px) 100vw, 50vw"
                     priority
                   />
                 </ion-col>
@@ -352,13 +346,12 @@
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
                   <!-- Image -->
-                  <!-- <img
+                  <img
                     [ngSrc]="meal.strMealThumb"
                     alt="{{ meal.strMeal }}"
-                    width="137"
-                    height="137"
-                    class="rounded-dish-img"
-                  /> -->
+                    [width]="135"
+                    [height]="135"
+                  />
                 </ion-col>
                 <ion-col class="ion-text-center">
                   <ion-card-header>

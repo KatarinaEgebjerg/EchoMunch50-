@@ -2,7 +2,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {
   CommonModule,
-  IMAGE_CONFIG,
+  IMAGE_LOADER,
   ImageLoaderConfig,
   NgOptimizedImage,
 } from '@angular/common';
@@ -24,9 +24,9 @@ import { ClickOutsideDirective } from 'src/app/util/click-outside.directive';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
-      provide: IMAGE_CONFIG,
+      provide: IMAGE_LOADER,
       useValue: (config: ImageLoaderConfig) => {
-        return `ttps://www.themealdb.com/images/media/meals/${config.src}-${config.width}`;
+        return `${config.src}/preview`;
       },
     },
   ],
