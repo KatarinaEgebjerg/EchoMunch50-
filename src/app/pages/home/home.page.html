@@ -2,7 +2,13 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <!-- Image Logo -->
-      <img src="assets/images/logo50.png" alt="Eco munch logo" class="logo" />
+      <img
+        src="assets/images/logo50.png"
+        alt="Eco munch logo"
+        class="logo"
+        width="50"
+        height="53"
+      />
       <h2 class="logoText">Eco Munch</h2>
     </ion-buttons>
 
@@ -98,14 +104,13 @@
         >
           <ion-row class="ion-align-items-center full-height">
             <ion-col>
-              <!-- Image -->
+              <!-- Image Serch Recipe  -->
               <img
                 [ngSrc]="meal.strMealThumb"
                 alt="{{ meal.strMeal }}"
                 class="rounded-dish-img"
                 [width]="135"
                 [height]="135"
-                priority
               />
             </ion-col>
             <ion-col class="ion-text-center">
@@ -274,8 +279,9 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <!-- image -->
+                  <!-- image Latest Meal -->
                   <img
+                    class="rounded-dish-img"
                     [ngSrc]="meal.strMealThumb"
                     alt="{{ meal.strMeal }}"
                     [width]="135"
@@ -346,13 +352,13 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <!-- Image -->
+                  <!-- Image Swipper -->
                   <img
+                    class="rounded-dish-img"
                     [ngSrc]="meal.strMealThumb"
                     alt="{{ meal.strMeal }}"
                     [width]="135"
                     [height]="135"
-                    priority
                   />
                 </ion-col>
                 <ion-col class="ion-text-center">
