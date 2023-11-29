@@ -1,6 +1,10 @@
 import { UserService } from './../../services/user-service/user.service';
 import { Component } from '@angular/core';
-import { ModalController, NavController, ToastController } from '@ionic/angular';
+import {
+  ModalController,
+  NavController,
+  ToastController,
+} from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { MealService } from 'src/app/services/meal-service/meal.service';
 import {
@@ -11,8 +15,9 @@ import {
   trigger,
 } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
-import { DishDetailsModalPage } from 'src/app/modals/dish-details-modal/dish-details-modal.page';
 
+import { DishDetailsModalPage } from 'src/app/modals/dish-details-modal/dish-details-modal.page';
+//https://www.themealdb.com/images/media/meals/
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -58,9 +63,13 @@ export class HomePage {
         await this.getFavorites();
       }
     });
-    this.http.get<{meals: {idIngredient: string, strIngredient: string}[]}>('../../../assets/ingredients.json').subscribe((data) => {
-      this.ingredients = data.meals.map(meal => meal.strIngredient);
-    });  
+    this.http
+      .get<{ meals: { idIngredient: string; strIngredient: string }[] }>(
+        '../../../assets/ingredients.json'
+      )
+      .subscribe((data) => {
+        this.ingredients = data.meals.map((meal) => meal.strIngredient);
+      });
     this.latestmeal();
     this.randomMeals();
   }
@@ -70,18 +79,18 @@ export class HomePage {
       component: DishDetailsModalPage,
       cssClass: 'dish-detail-modal',
       componentProps: {
-        'meal': meal,
-        'userIngredients': this.userIngredients
-      }
+        meal: meal,
+        userIngredients: this.userIngredients,
+      },
     });
-  
+
     modal.onDidDismiss().then(() => {
       this.getFavorites();
     });
-  
+
     await modal.present();
   }
-  
+
   async searchMeals() {
     this.isLoading = true;
     this.showSearchResults = true;
@@ -100,22 +109,22 @@ export class HomePage {
 
   getItems(ev: any) {
     const val = ev.target.value;
-  
+
     if (val && val.trim() !== '') {
       this.filteredIngredients = this.ingredients.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return item.toLowerCase().indexOf(val.toLowerCase()) > -1;
       });
     } else {
       this.filteredIngredients = [];
     }
   }
-  
+
   selectIngredient(ingredient: string) {
     this.newIngredient = ingredient;
     this.addUserIngredient(ingredient);
     this.filteredIngredients = [];
   }
-  
+
   addUserIngredient(ingredient: string) {
     if (ingredient && !this.userIngredients.includes(ingredient)) {
       this.userIngredients.push(ingredient);
@@ -161,6 +170,7 @@ export class HomePage {
   async randomMeals() {
     const meal = await this.mealService.getRandomMeals();
     this.randomMeal = this.randomMeal.concat(meal);
+    console.log(meal);
   }
 
   isFavorite() {

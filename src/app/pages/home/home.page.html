@@ -1,11 +1,15 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
+      <!-- Image Logo -->
       <ion-img
-        src="assets/images/ecoLogo.png"
+        src="assets/images/logo50.png"
         alt="Eco munch logo"
         class="logo"
-      ></ion-img>
+        srcset="assets/images/logo50.png w50 assets/images/logo75.png w75"
+        width="50"
+        height="53"
+      />
       <h2 class="logoText">Eco Munch</h2>
     </ion-buttons>
 
@@ -101,10 +105,13 @@
         >
           <ion-row class="ion-align-items-center full-height">
             <ion-col>
-              <ion-img
-                [src]="meal.strMealThumb"
-                alt="{{ meal.strMeal }}"
+              <!-- Image Serch Recipe  -->
+              <img
                 class="rounded-dish-img"
+                [ngSrc]="meal.strMealThumb"
+                alt="{{ meal.strMeal }}"
+                [width]="135"
+                [height]="135"
               />
             </ion-col>
             <ion-col class="ion-text-center">
@@ -273,10 +280,14 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <ion-img
-                    [src]="meal.strMealThumb"
-                    alt="{{ meal.strMeal }}"
+                  <!-- image Latest Meal -->
+                  <img
                     class="rounded-dish-img"
+                    [ngSrc]="meal.strMealThumb"
+                    alt="{{ meal.strMeal }}"
+                    [width]="135"
+                    [height]="135"
+                    priority
                   />
                 </ion-col>
                 <ion-col class="ion-text-center">
@@ -342,10 +353,13 @@
             >
               <ion-row class="ion-align-items-center full-height">
                 <ion-col>
-                  <ion-img
-                    [src]="meal.strMealThumb"
-                    alt="{{ meal.strMeal }}"
+                  <!-- Image Swipper -->
+                  <img
                     class="rounded-dish-img"
+                    [ngSrc]="meal.strMealThumb"
+                    alt="{{ meal.strMeal }}"
+                    [width]="135"
+                    [height]="135"
                   />
                 </ion-col>
                 <ion-col class="ion-text-center">
