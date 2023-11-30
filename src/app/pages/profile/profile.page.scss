@@ -44,3 +44,39 @@ ion-avatar {
         word-break: break-word;
     }
 }
+
+@media (max-width: 767px) {
+    .breadcrumb-container{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .logoText{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .breadcrumb-container{
+        text-align: left;
+    }
+    .page-container{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .tools{
+        margin-left: 3.5rem;
+      }
+}
+
+.logo {
+    width: auto;
+    height: auto;
+    margin-left: 4.5rem;
+  }
+  
+  .logoText {
+      color: #2E4E2B;
+      margin-left: 10px;
+  }

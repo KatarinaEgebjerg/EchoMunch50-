@@ -12,6 +12,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { DishDetailsModalPage } from 'src/app/modals/dish-details-modal/dish-details-modal.page';
+import {IonicSlides} from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -30,6 +31,7 @@ export class ProfilePage {
   favoriteStatus: { [key: string]: boolean } = {}; 
   categories: any[] = [];
   isLoadingFavorites: boolean = true;
+  swiperModules = [IonicSlides];
 
 
   constructor(
