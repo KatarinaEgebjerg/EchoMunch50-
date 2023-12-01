@@ -37,6 +37,14 @@
           "configurations": {
             "production": {
               "optimization": true,
+              "buildOptimizer": true,
+              "sourceMap": {
+                "scripts": true,
+                "styles": true,
+                "hidden": true,
+                "vendor": true
+              },
+              "namedChunks": true,
               "budgets": [
                 {
                   "type": "initial",
