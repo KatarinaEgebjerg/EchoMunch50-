@@ -67,7 +67,10 @@ ion-avatar {
     }
     .tools{
         margin-left: 3.5rem;
-      }
+      }  
+  .personal{
+    padding-top: 30px;
+  }
 }
 
 .logo {
@@ -79,4 +82,10 @@ ion-avatar {
   .logoText {
       color: #2E4E2B;
       margin-left: 10px;
+  }
+ 
+  .avatar-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
