@@ -30,6 +30,7 @@ export class ProfilePage {
   favoriteStatus: { [key: string]: boolean } = {}; 
   categories: any[] = [];
   isLoadingFavorites: boolean = true;
+  isLoading: boolean = false;
 
 
   constructor(
@@ -49,11 +50,13 @@ export class ProfilePage {
   }
 
   async getFavorites() {
+    this.isLoading = true;
     if (this.user) {
       this.favorites = await this.userService.getFavorites(this.user.uid);
       this.isFavorite();
       this.isLoadingFavorites = false;
     }
+    this.isLoading = false;
   }
 
   async logout() {
