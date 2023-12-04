@@ -1,6 +1,6 @@
 <ion-toolbar color="white">
   <ion-buttons slot="end">
-    <ion-button color="primary" (click)="closeModal()">
+    <ion-button color="primary" (click)="closeModal()" aria-label="Close">
       <ion-icon name="close-outline" size="large"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <ion-button expand="block" (click)="onSumbit()">Save</ion-button>
+      <ion-button expand="block" (click)="onSumbit()" aria-label="Save">Save</ion-button>
     </form>
 
   </div>
