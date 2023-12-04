@@ -1,7 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <!-- Image Logo -->
       <ion-img
         src="assets/images/logo50.png"
         alt="Eco munch logo"
@@ -14,7 +13,7 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button (click)="navigateToProfile()">
+      <ion-button (click)="navigateToProfile()" aria-label="navigateToProfile">
         <ion-icon
           class="profileLogo"
           size="large"
@@ -141,6 +140,7 @@
                             <ion-buttons slot="end">
                               <ion-button
                                 (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
+                                aria-label="FavoriteButton"
                               >
                                 <ion-icon
                                   *ngIf="favoriteStatus[meal.idMeal]"
@@ -212,6 +212,7 @@
                               <ion-buttons slot="end">
                                 <ion-button
                                   (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
+                                  aria-label="FavoriteButton"
                                 >
                                   <ion-icon
                                     *ngIf="favoriteStatus[meal.idMeal]"
@@ -296,6 +297,7 @@
                   <ion-buttons>
                     <ion-button
                       (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
+                      aria-label="FavoriteButton"
                     >
                       <ion-icon
                         *ngIf="favoriteStatus[meal.idMeal]"
