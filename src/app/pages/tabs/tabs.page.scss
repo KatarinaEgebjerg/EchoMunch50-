@@ -13,4 +13,10 @@ ion-tab-bar {
     --background-selected: transparent;
   }
 
+  @media (min-width: 768px) {
+  .homebutton{
+    display: none;
+  }
+}
+
   
