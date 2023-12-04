@@ -31,8 +31,8 @@
     <ion-grid>
       <ion-row>
         <!--Searchbar-->
-        <ion-col size-lg="5">
-          <h1>What do I have</h1>
+        <ion-col size-lg="6">
+          <h1>What I have in my fridge</h1>
           <div (clickOutside)="onClickedOutside()">
             <ion-searchbar
               class="ion-no-padding ion-no-margin ion-no-border"
@@ -96,12 +96,12 @@
             </div>
           </div>
         </ion-col>
-        <ion-col size-lg="7">
+        <ion-col size-lg="6">
           <div *ngIf="!showSearchResults && !isLoading">
             <!--Latest Meal-->
             <ion-grid class="meal-dish-container">
               <ion-row class="ion-justify-content-center">
-                <ion-col size-lg="7">
+                <ion-col>
                   <ion-text color="secondary">
                     <h2>Latest meal</h2>
                   </ion-text>
@@ -166,7 +166,7 @@
 
               <!--Popular Meals-->
               <ion-row class="ion-justify-content-center">
-                <ion-col size-lg="7">
+                <ion-col>
                   <ion-text color="secondary">
                     <h2>Popular meals</h2>
                   </ion-text>
