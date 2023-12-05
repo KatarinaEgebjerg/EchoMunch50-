@@ -10,6 +10,20 @@ ion-content {
         width: 60%;
     }
 
+    
+    @media (min-width: 768px) {
+        ion-img {
+            display: block;
+            margin: 0 auto;
+            width: 30%;
+        }
+
+        .page-container{
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+    }
+
     .form-container {
         padding-top: 20px;
 
