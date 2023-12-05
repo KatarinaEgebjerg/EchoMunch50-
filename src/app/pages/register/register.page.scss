@@ -69,6 +69,9 @@ ion-content {
       margin: 30px 450px 15px 450px;
       --background-color: #9dc3c6;
     }
+    ion-icon {
+      margin-top: 1.25rem;
+    }
     //Mobile view
     @media (max-width: 1180px) {
       .input-container {
