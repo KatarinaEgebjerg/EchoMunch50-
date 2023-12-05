@@ -2,7 +2,7 @@
 
   <div class="page-container">
 
-    <ion-img src="../../../assets/images/ecoLogo.png"></ion-img>
+    <ion-img src="../../../assets/images/ecoLogo.png" alt="Eco Munch Logo"></ion-img>
    
 
 
@@ -49,7 +49,7 @@
         </ion-text>
       </div>
 
-      <ion-button type="submit" strong="true" expand="block" shape="round" [disabled]="!credentials.valid">
+      <ion-button type="submit" strong="true" expand="block" shape="round" [disabled]="!credentials.valid" aria-label="Login">
         Login
       </ion-button>
 
@@ -64,7 +64,7 @@
     </div>
 
     <div class="alternative-container">
-      <ion-button (click)="googleLogin()" expand="block" shape="round" ion-ripple-effect="false">
+      <ion-button (click)="googleLogin()" expand="block" shape="round" ion-ripple-effect="false" aria-label="Login with Google">
         <ion-icon slot="start" src="../../../assets/icon/GoogleLogo.svg"></ion-icon>
         Login With Google
       </ion-button>
