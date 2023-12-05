@@ -1,44 +1,79 @@
 ion-content {
-
-    .page-container {
-        padding: 20px;
+  .header {
+    div {
+      display: flex;
+      align-items: baseline;
     }
-
+    margin-left: 7.5rem;
+    margin-top: 1.75rem;
     ion-img {
-        display: block;
-        margin: 0 auto;
-        width: 60%;
+      width: 101px;
+      height: 101px;
     }
-
-    .form-container {
-        padding-top: 20px;
-
-        .input-container {
-            width: 100%;
-
-            ion-item {
-                ion-icon {
-                    margin-top: 40px;
-                }
-
-                ion-label {
-                    font-size: 18px;
-                }
-
-            }
-
-            .error {
-                color: #f44336;
-                font-size: 0.8rem;
-                font-weight: 600;
-                padding-left: 41px;
-                padding-top: 5px;
-            }
-        }
-
-        ion-button {
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+    .logoText {
+      color: #2e4e2b;
+      margin-left: 10px;
     }
+    //Mobile view
+    @media (max-width: 768px) {
+      ion-img {
+        transform: translateY(30px);
+      }
+      ion-toolbar {
+        transform: translate(-110px, -110px);
+        position: absolute;
+      }
+      .logoText {
+        display: none;
+      }
+    }
+  }
+
+  .page-container {
+    text-align: center;
+    //mobile view
+
+    @media (max-width: 768px) {
+      text-align: start;
+    }
+  }
+
+  .form-container {
+    padding-top: 20px;
+    .input-container {
+      width: 100%;
+
+      ion-item {
+        margin: 0px 450px 0px 450px;
+      }
+      .error {
+        color: #f44336;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding-left: 41px;
+        padding-top: 5px;
+      }
+    }
+    ion-button {
+      margin: 30px 450px 15px 450px;
+      --background-color: #9dc3c6;
+    }
+    //Mobile view
+    @media (max-width: 768px) {
+      .input-container {
+        ion-item {
+          margin: 0px 0px 0px 0px;
+          ion-icon {
+            margin-top: 40px;
+          }
+          ion-label {
+            font-size: 18px;
+          }
+        }
+      }
+      ion-button {
+        margin: 30px 0px 15px 0px;
+      }
+    }
+  }
 }
