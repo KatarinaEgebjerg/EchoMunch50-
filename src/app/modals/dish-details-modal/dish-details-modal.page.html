@@ -8,18 +8,18 @@
         *ngIf="favoriteStatus[meal.idMeal]"
         name="heart"
         size="large"
-        color="primary"
+        color="tertiary"
       ></ion-icon>
       <ion-icon
         *ngIf="!favoriteStatus[meal.idMeal]"
         name="heart-outline"
         size="large"
-        color="primary"
+        color="tertiary"
       ></ion-icon>
     </ion-button>
   </ion-buttons>
   <ion-buttons slot="end">
-    <ion-button color="primary" (click)="closeModal()" aria-label="Close">
+    <ion-button color="tertiary" (click)="closeModal()" aria-label="Close">
       <ion-icon name="close-outline" size="large"></ion-icon>
     </ion-button>
   </ion-buttons>

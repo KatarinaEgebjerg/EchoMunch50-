@@ -52,6 +52,38 @@
               </ion-list>
             </div>
 
+      <div *ngIf="isSearchBarFocused" [@fadeOutIn]>
+        <ion-card class="ion-no-margin gray-toolbar height">
+          <ion-card-content>
+            <div class="card-header-container">
+              <h2 class="card-header">Ingredients</h2>
+              <ion-chip
+                color="tertiary"
+                class="clear-button"
+                (click)="clearIngredients()"
+              >
+                Clear
+              </ion-chip>
+            </div>
+            <ion-chip
+              *ngFor="let ingredient of userIngredients; let i = index"
+              [@fadeOutIn]
+            >
+              <ion-label>{{ingredient}}</ion-label>
+              <ion-icon
+                name="close"
+                (click)="removeIngredient(i, $event)"
+              ></ion-icon>
+            </ion-chip>
+            <br />
+            <ion-button
+              expand="block"
+              class="search-button"
+              [disabled]="userIngredients.length === 0"
+              (click)="searchMeals()"
+            >
+              <span>Search</span>
+            </ion-button>
             <div *ngIf="isSearchBarFocused" [@fadeOutIn]>
               <ion-card class="ion-no-margin gray-toolbar height">
                 <ion-card-content>
@@ -303,13 +335,13 @@
                         *ngIf="favoriteStatus[meal.idMeal]"
                         name="heart"
                         size="large"
-                        color="primary"
+                        color="tertiary"
                       ></ion-icon>
                       <ion-icon
                         *ngIf="!favoriteStatus[meal.idMeal]"
                         name="heart-outline"
                         size="large"
-                        color="primary"
+                        color="tertiary"
                       ></ion-icon>
                     </ion-button>
                   </ion-buttons>

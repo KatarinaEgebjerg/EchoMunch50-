@@ -16,7 +16,7 @@
     <ion-toolbar>
       <ion-buttons slot="start" class="tools">
         <ion-back-button
-          color="primary"
+          color="tertiary"
           defaultHref="/tabs/home"
           class="custom-back-button"
           aria-label="BackButton"
@@ -28,6 +28,7 @@
       </ion-breadcrumbs>
       <ion-buttons slot="end">
         <ion-button fill="clear" slot="end" (click)="logout()" color="primary" aria-label="LogOut">
+        <ion-button fill="clear" color="tertiary" slot="end" (click)="logout()" color="primary">
           Logout
           <ion-icon name="Log-out-outline"></ion-icon>
         </ion-button>
@@ -46,7 +47,7 @@
                   <h3>Edit</h3>
                   <ion-icon
                     size="medium"
-                    color="primary"
+                    color="tertiary"
                     name="create-outline"
                   ></ion-icon>
                 </ion-button>
@@ -229,13 +230,13 @@
                         *ngIf="favoriteStatus[favorite.idMeal]"
                         name="heart"
                         size="large"
-                        color="primary"
+                        color="tertiary"
                       ></ion-icon>
                       <ion-icon
                         *ngIf="!favoriteStatus[favorite.idMeal]"
                         name="heart-outline"
                         size="large"
-                        color="primary"
+                        color="tertiary"
                       ></ion-icon>
                     </ion-button>
                   </ion-buttons>
