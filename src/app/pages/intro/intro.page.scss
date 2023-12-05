@@ -52,12 +52,16 @@ p {
 }
 
 
-  .get-started:hover {
-    animation: bounce 1.5s;
-    transform: translateY(408%);
-    transform: translateY(392%);
-    //transform: skew(-0deg);
-  }
+
+  @keyframes bounce { 
+    0% { transform: translateY(400); } 
+    100% { transform: translateY(415px); } 
+}
+
+  .get-started:active { 
+    animation: bounce 1.8s infinite alternate; 
+}
+
 
 
 
