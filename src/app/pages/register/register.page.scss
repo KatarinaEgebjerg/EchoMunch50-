@@ -1,44 +1,70 @@
 ion-content {
-
-    .page-container {
-        padding: 20px;
+  .header {
+    div {
+      display: flex;
+      align-items: baseline;
+      margin-left: 7.5rem;
+      margin-top: 1rem;
     }
-
     ion-img {
-        display: block;
-        margin: 0 auto;
-        width: 60%;
+      width: 101px;
+      height: 101px;
     }
+    .logoText {
+      color: #2e4e2b;
+      margin-left: 10px;
+    }
+    //Mobile view
+    @media (max-width: 768px) {
+      div {
+        justify-content: center;
+        margin-left: 0px;
+        margin-top: 0px;
+      }
+      ion-img {
+        transform: translateY(30px);
+      }
+      ion-toolbar {
+        transform: translate(10px, -90px);
+        position: absolute;
+      }
+      .logoText {
+        display: none;
+      }
+    }
+    //ipad and desktop view
+    @media (min-width: 820px) {
+      ion-toolbar {
+        transform: translate(130px, -10px);
+        position: absolute;
+      }
+    }
+  }
 
+  @media (min-width: 768px) {
     .form-container {
-        padding-top: 20px;
-
-        .input-container {
-            width: 100%;
-
-            ion-item {
-                ion-icon {
-                    margin-top: 40px;
-                }
-
-                ion-label {
-                    font-size: 18px;
-                }
-
-            }
-
-            .error {
-                color: #f44336;
-                font-size: 0.8rem;
-                font-weight: 600;
-                padding-left: 41px;
-                padding-top: 5px;
-            }
-        }
-
-        ion-button {
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+      margin-left: 30%;
+      margin-right: 30%;
     }
+  }
+  .form-container {
+    padding-top: 20px;
+    .input-container {
+      width: 100%;
+
+      .error {
+        color: #f44336;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding-left: 41px;
+        padding-top: 5px;
+      }
+    }
+    ion-button {
+      margin-top: 1.25rem;
+    }
+    ion-icon {
+      margin-top: 1.25rem;
+    }
+  }
 }

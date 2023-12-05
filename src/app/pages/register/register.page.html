@@ -1,20 +1,33 @@
 <ion-content [fullscreen]="true">
-
-  <ion-header class="ion-no-border">
+  <ion-header class="ion-no-border header">
+    <div>
+      <ion-img
+        src="../../../assets/images/ecoLogo.png"
+        height="101"
+        width="101"
+        class="logo"
+        slot="start"
+        alt="Eco Munch Logo"
+      ></ion-img>
+      <h2 class="logoText">Eco Munch</h2>
+    </div>
     <ion-toolbar color="white">
       <ion-buttons slot="start">
-        <ion-back-button color="primary" defaultHref="/login" text="Login" class="custom-back-button"></ion-back-button>
+        <ion-back-button
+          color="tertiary"
+          defaultHref="/login"
+          aria-label="back"
+          fill="clear"
+          text=""
+          icon="arrow-back-outline"
+        ></ion-back-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
   <div class="page-container">
-
-  <ion-img src="../../../assets/images/ecoLogo.png"></ion-img>
-
     <div class="form-container" [formGroup]="credentials">
-
-      <ion-text>
+      <ion-text class="register">
         <h1>Register</h1>
       </ion-text>
 
@@ -22,11 +35,18 @@
         <ion-item class="ion-no-padding">
           <ion-icon name="person-outline" slot="start"></ion-icon>
           <ion-label position="floating">Name</ion-label>
-          <ion-input type="text" placeholder="Enter name" required="true" clearInput="true"
-            formControlName="name"></ion-input>
+          <ion-input
+            type="text"
+            required="true"
+            clearInput="true"
+            formControlName="name"
+            aria-label="input name"
+          ></ion-input>
         </ion-item>
         <div class="error">
-          <span *ngIf="name.errors?.required && name.touched">Name is required</span>
+          <span *ngIf="name.errors?.required && name.touched"
+            >Name is required</span
+          >
         </div>
       </div>
 
@@ -34,12 +54,21 @@
         <ion-item class="ion-no-padding">
           <ion-icon name="mail-outline" slot="start"></ion-icon>
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" placeholder="Enter email" required="true" clearInput="true"
-            formControlName="email"></ion-input>
+          <ion-input
+            type="email"
+            required="true"
+            clearInput="true"
+            formControlName="email"
+            aria-label="input email"
+          ></ion-input>
         </ion-item>
         <div class="error">
-          <span *ngIf="email.errors?.email && email.touched">Invalid email</span>
-          <span *ngIf="email.errors?.required && email.touched">Email is required</span>
+          <span *ngIf="email.errors?.email && email.touched"
+            >Invalid email</span
+          >
+          <span *ngIf="email.errors?.required && email.touched"
+            >Email is required</span
+          >
         </div>
       </div>
 
@@ -47,43 +76,79 @@
         <ion-item class="ion-no-padding">
           <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
           <ion-label position="floating">Password</ion-label>
-          <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Enter password" required="true"
-            formControlName="password"></ion-input>
-          <ion-icon *ngIf="password.value && showPassword" name="eye-off-outline" slot="end"
-            (click)="showPassword = !showPassword"></ion-icon>
-          <ion-icon *ngIf="password.value && !showPassword" name="eye-outline" slot="end"
-            (click)="showPassword = !showPassword"></ion-icon>
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            required="true"
+            formControlName="password"
+            aria-label="input password"
+          ></ion-input>
+          <ion-icon
+            *ngIf="password.value && showPassword"
+            name="eye-off-outline"
+            slot="end"
+            (click)="showPassword = !showPassword"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="password.value && !showPassword"
+            name="eye-outline"
+            slot="end"
+            (click)="showPassword = !showPassword"
+          ></ion-icon>
         </ion-item>
         <div class="error">
-          <span *ngIf="password.errors?.required && password.touched">Password is required</span>
-          <span *ngIf="password.errors?.minlength && password.touched">Password needs to be 6 characters</span>
+          <span *ngIf="password.errors?.required && password.touched"
+            >Password is required</span
+          >
+          <span *ngIf="password.errors?.minlength && password.touched"
+            >Password needs to be 6 characters</span
+          >
         </div>
       </div>
-      
 
       <div class="input-container">
         <ion-item class="ion-no-padding">
           <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
           <ion-label position="floating">Re-enter password</ion-label>
-          <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Enter password" required="true"
-            formControlName="rePassword"></ion-input>
-          <ion-icon *ngIf="rePassword.value && showPassword" name="eye-off-outline" slot="end"
-            (click)="showPassword = !showPassword"></ion-icon>
-          <ion-icon *ngIf="rePassword.value && !showPassword" name="eye-outline" slot="end"
-            (click)="showPassword = !showPassword"></ion-icon>
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            required="true"
+            formControlName="rePassword"
+            aria-label="input rePassword"
+          ></ion-input>
+          <ion-icon
+            *ngIf="rePassword.value && showPassword"
+            name="eye-off-outline"
+            slot="end"
+            (click)="showPassword = !showPassword"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="rePassword.value && !showPassword"
+            name="eye-outline"
+            slot="end"
+            (click)="showPassword = !showPassword"
+          ></ion-icon>
         </ion-item>
         <div class="error">
-          <span *ngIf="rePassword.errors?.minlength && rePassword.touched">password needs to be 6 characters</span>
-          <span *ngIf="credentials.errors?.notSame && rePassword.touched">Passwords do not match</span>
+          <span *ngIf="rePassword.errors?.minlength && rePassword.touched"
+            >password needs to be 6 characters</span
+          >
+          <span *ngIf="credentials.errors?.notSame && rePassword.touched"
+            >Passwords do not match</span
+          >
         </div>
       </div>
-      
-      <ion-button (click)="register()" type="submit" strong="true" expand="block" shape="round"
-        [disabled]="!credentials.valid">
+
+      <ion-button
+        (click)="register()"
+        type="submit"
+        strong="true"
+        expand="block"
+        shape="round"
+        [disabled]="!credentials.valid"
+        color="primary"
+      >
         Register
       </ion-button>
-
     </div>
   </div>
-
 </ion-content>
