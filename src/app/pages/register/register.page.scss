@@ -51,12 +51,11 @@ ion-content {
 
   .form-container {
     padding-top: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
     .input-container {
       width: 100%;
 
-      ion-item {
-        margin: 0px 450px 0px 450px;
-      }
       .error {
         color: #f44336;
         font-size: 0.8rem;
@@ -66,8 +65,7 @@ ion-content {
       }
     }
     ion-button {
-      margin: 30px 450px 15px 450px;
-      --background-color: #9dc3c6;
+      margin-top: 1.25rem;
     }
     ion-icon {
       margin-top: 1.25rem;
