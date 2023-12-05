@@ -2,6 +2,7 @@
   <ion-buttons slot="start">
     <ion-button
       (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal)"
+      aria-label="FavoriteButton"
     >
       <ion-icon
         *ngIf="favoriteStatus[meal.idMeal]"
@@ -18,7 +19,7 @@
     </ion-button>
   </ion-buttons>
   <ion-buttons slot="end">
-    <ion-button color="tertiary" (click)="closeModal()">
+    <ion-button color="tertiary" (click)="closeModal()" aria-label="Close">
       <ion-icon name="close-outline" size="large"></ion-icon>
     </ion-button>
   </ion-buttons>

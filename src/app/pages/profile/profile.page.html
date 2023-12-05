@@ -1,7 +1,7 @@
 <ion-content>
   <ion-header class="ion-no-border">
     <ion-buttons slot="start">
-      <ion-button href="#home">
+      <ion-button href="#home" aria-label="Eco Munch">
         <ion-img
           src="assets/images/logo50.png"
           alt="Eco munch logo"
@@ -19,6 +19,7 @@
           color="tertiary"
           defaultHref="/tabs/home"
           class="custom-back-button"
+          aria-label="BackButton"
         ></ion-back-button>
       </ion-buttons>
       <ion-breadcrumbs class="breadcrumb-container">
@@ -26,7 +27,7 @@
         <ion-breadcrumb href="#Profile"> Profile </ion-breadcrumb>
       </ion-breadcrumbs>
       <ion-buttons slot="end">
-        <ion-button fill="clear" color="tertiary" slot="end" (click)="logout()" color="primary">
+        <ion-button fill="clear" slot="end" (click)="logout()" color="tertiary" aria-label="LogOut">
           Logout
           <ion-icon name="Log-out-outline"></ion-icon>
         </ion-button>
@@ -41,7 +42,7 @@
           <ion-card style="background-color: #f4f4f4">
             <ion-toolbar class="gray-toolbar">
               <ion-buttons slot="end">
-                <ion-button fill="clear" (click)="updateUser()">
+                <ion-button fill="clear" (click)="updateUser()" aria-label="edit">
                   <h3>Edit</h3>
                   <ion-icon
                     size="medium"
@@ -221,8 +222,9 @@
                   <ion-buttons
                     slot="end"
                     (click)="favoriteStatus[favorite.idMeal] ? removeFavorite(favorite) : addFavorite(favorite); $event.stopPropagation()"
+                    aria-label="FavoriteButton"
                   >
-                    <ion-button>
+                    <ion-button aria-label="FavoriteButton">
                       <ion-icon
                         *ngIf="favoriteStatus[favorite.idMeal]"
                         name="heart"
