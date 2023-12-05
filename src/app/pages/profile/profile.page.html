@@ -1,11 +1,32 @@
 <ion-content>
   <ion-header class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button href="#home">
+        <ion-img
+          src="assets/images/logo50.png"
+          alt="Eco munch logo"
+          class="logo"
+          srcset="assets/images/logo50.png w50 assets/images/logo75.png w75"
+          width="50"
+          height="50"
+        />
+        <h2 class="logoText">Eco Munch</h2>
+      </ion-button>
+    </ion-buttons>
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button color="tertiary" defaultHref="/tabs/home" text="Home" class="custom-back-button"></ion-back-button>
+      <ion-buttons slot="start" class="tools">
+        <ion-back-button
+          color="tertiary"
+          defaultHref="/tabs/home"
+          class="custom-back-button"
+        ></ion-back-button>
       </ion-buttons>
-      <ion-buttons slot="end" size="large">
-        <ion-button fill="clear" color="tertiary" slot="end" (click)="logout()">
+      <ion-breadcrumbs class="breadcrumb-container">
+        <ion-breadcrumb href="#Home"> Home </ion-breadcrumb>
+        <ion-breadcrumb href="#Profile"> Profile </ion-breadcrumb>
+      </ion-breadcrumbs>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="tertiary" slot="end" (click)="logout()" color="primary">
           Logout
           <ion-icon name="Log-out-outline"></ion-icon>
         </ion-button>
@@ -14,51 +35,51 @@
   </ion-header>
 
   <div class="page-container">
-    <ion-card style="background-color: #f4f4f4">
-      <ion-toolbar class="gray-toolbar">
-        <ion-buttons slot="end">
-          <ion-button fill="clear" (click)="updateUser()">
-            <ion-icon
-              size="medium"
-              color="tertiary"
-              name="create-outline"
-            ></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-lg="6" size-sm="12">
+          <ion-card style="background-color: #f4f4f4">
+            <ion-toolbar class="gray-toolbar">
+              <ion-buttons slot="end">
+                <ion-button fill="clear" (click)="updateUser()">
+                  <h3>Edit</h3>
+                  <ion-icon
+                    size="medium"
+                    color="tertiary"
+                    name="create-outline"
+                  ></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
 
-      <ion-grid>
-        <ion-row class="ion-justify-content-center">
-          <ion-col size="auto" class="ion-text-center">
-            <ion-avatar>
-              <ion-img
-                *ngIf="!user?.photoURL"
-                alt="Silhouette of a person's head"
-                src="https://ionicframework.com/docs/img/demos/avatar.svg"
-              />
-              <ion-img
-                *ngIf="user?.photoURL"
-                src="{{ user?.photoURL }}"
-                alt="{{ user?.name }}"
-              />
-            </ion-avatar>
-          </ion-col>
-        </ion-row>
-        <ion-row class="ion-justify-content-center">
-          <ion-label class="ion-text-center ion-padding-top">
-            <h1>Hello {{user?.name}}</h1>
-          </ion-label>
-        </ion-row>
-      </ion-grid>
-
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12" class="ion-text-center">
-            <p>Email: {{user?.email}}</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
+            <ion-grid>
+              <ion-row style="padding-bottom: 2rem">
+                <ion-col class="avatar-col" size-sm="12" size-lg="4">
+                  <ion-avatar>
+                    <ion-img
+                      *ngIf="!user?.photoURL"
+                      alt="Silhouette of a person's head"
+                      src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                    />
+                    <ion-img
+                      *ngIf="user?.photoURL"
+                      src="{{ user?.photoURL }}"
+                      alt="{{ user?.name }}"
+                    />
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size-sm="12" size-lg="8" class="personal">
+                  <ion-label class="ion-text-center">
+                    <h1>Hello {{user?.name}}</h1>
+                    <p>Email: {{user?.email}}</p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
     <ion-grid class="favorite-dish-container">
       <ion-row class="ion-justify-content-center">
@@ -76,9 +97,99 @@
         You have no favorite dishes yet
       </h3>
 
+      <div *ngIf="isLoading" [@fadeOutIn]>
+        <ion-card class="loadcard">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-skeleton-text
+                  animated
+                  class="skeleton-image"
+                ></ion-skeleton-text>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-content>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+            <ion-skeleton-text
+              animated
+              class="skeleton-heart"
+            ></ion-skeleton-text>
+        </ion-card>
+  
+        <ion-card class="loadcard">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-skeleton-text
+                  animated
+                  class="skeleton-image"
+                ></ion-skeleton-text>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-content>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+            <ion-skeleton-text
+              animated
+              class="skeleton-heart"
+            ></ion-skeleton-text>
+        </ion-card>
+  
+        <ion-card class="loadcard">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-skeleton-text
+                  animated
+                  class="skeleton-image"
+                ></ion-skeleton-text>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-content>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                  <ion-skeleton-text
+                    animated
+                    class="skeleton-title"
+                  ></ion-skeleton-text>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+            <ion-skeleton-text
+              animated
+              class="skeleton-heart"
+            ></ion-skeleton-text>
+        </ion-card>
+      </div>
+
       <ion-row>
-        <div *ngFor="let favorite of favorites">
-          <ion-card (click)="dishDetailsModal(favorite)"
+        <ion-col *ngFor="let favorite of favorites" size-lg="6" size-sm="12">
+          <ion-card
+            (click)="dishDetailsModal(favorite)"
             *ngIf="!favorite.removed"
             class="favorite-dish-card favorite-dish-card-height dish-bg-color"
             [@fadeOutIn]
@@ -130,7 +241,7 @@
               </ion-col>
             </ion-row>
           </ion-card>
-        </div>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
