@@ -3,9 +3,9 @@ ion-content {
     div {
       display: flex;
       align-items: baseline;
+      margin-left: 7.5rem;
+      margin-top: 1rem;
     }
-    margin-left: 7.5rem;
-    margin-top: 1.75rem;
     ion-img {
       width: 101px;
       height: 101px;
@@ -16,15 +16,26 @@ ion-content {
     }
     //Mobile view
     @media (max-width: 768px) {
+      div {
+        justify-content: center;
+        margin-left: 0px;
+        margin-top: 0px;
+      }
       ion-img {
         transform: translateY(30px);
       }
       ion-toolbar {
-        transform: translate(-110px, -110px);
+        transform: translate(10px, -90px);
         position: absolute;
       }
       .logoText {
         display: none;
+      }
+    }
+    @media (min-width: 820px) {
+      ion-toolbar {
+        transform: translate(130px, -10px);
+        position: absolute;
       }
     }
   }
@@ -59,7 +70,7 @@ ion-content {
       --background-color: #9dc3c6;
     }
     //Mobile view
-    @media (max-width: 768px) {
+    @media (max-width: 1180px) {
       .input-container {
         ion-item {
           margin: 0px 0px 0px 0px;
