@@ -42,11 +42,28 @@ p {
     font-weight: 700;
     margin-left: 2em;
     margin-right: 2em;
+    box-shadow: #2E4E2B;
 }
+
+
 
 .get-started {
     transform: translateY(400%);
 }
+
+
+
+  @keyframes bounce { 
+    0% { transform: translateY(400); } 
+    100% { transform: translateY(415px); } 
+}
+
+  .get-started:active { 
+    animation: bounce 1.8s infinite alternate; 
+}
+
+
+
 
 .background {
     background: url(../../../assets/images/foodCover.png) 0 0/100% 100% no-repeat;
