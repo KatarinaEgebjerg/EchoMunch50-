@@ -25,6 +25,7 @@
             required="true"
             clearInput="true"
             formControlName="email"
+            aria-label="Email"
           ></ion-input>
         </ion-item>
         <div class="error">
@@ -46,6 +47,7 @@
             placeholder="Enter password"
             required="true"
             formControlName="password"
+            aria-label="password"
           ></ion-input>
           <ion-icon
             *ngIf="password.value && showPassword"
