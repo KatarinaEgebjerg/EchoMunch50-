@@ -15,6 +15,11 @@ import {
   trigger,
 } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
+import {
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+  canActivate,
+} from '@angular/fire/auth-guard';
 
 import { DishDetailsModalPage } from 'src/app/modals/dish-details-modal/dish-details-modal.page';
 //https://www.themealdb.com/images/media/meals/
@@ -227,6 +232,13 @@ export class HomePage {
     } else {
       return truncatedName;
     }
+  }
+  login() {
+    const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+    if (!canActivate) {
+      //canActivate(redirectUnauthorizedToLogin);
+    }
+    //canActivate(redirectUnauthorizedToLogin);
   }
 
   getCategoryIcon(strCategory: string) {

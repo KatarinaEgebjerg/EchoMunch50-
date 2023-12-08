@@ -12,7 +12,31 @@
       <h2 class="logoText">Eco Munch</h2>
     </ion-buttons>
 
-    <ion-buttons slot="end">
+    <!-- <ion-buttons slot="end">
+      <ion-button
+        fill="clear"
+        slot="end"
+        (click)="login()"
+        color="tertiary"
+        aria-label="Login"
+        class="loginButton"
+      >
+        Login
+        <ion-icon name="Log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="end" class="profilbuttons">
+      <ion-button
+        fill="clear"
+        slot="end"
+        (click)="login()"
+        color="tertiary"
+        aria-label="Login"
+        class="loginButton"
+      >
+        Login
+        <ion-icon name="Log-out-outline"></ion-icon>
+      </ion-button>
       <ion-button (click)="navigateToProfile()" aria-label="navigateToProfile">
         <ion-icon
           class="profileLogo"

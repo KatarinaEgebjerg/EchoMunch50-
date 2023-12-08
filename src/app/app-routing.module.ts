@@ -5,7 +5,7 @@ import {
   redirectLoggedInTo,
   canActivate,
 } from '@angular/fire/auth-guard';
-import { IntroGuard } from './guards/intro.guard';
+import { IntroGuard } from './guards/intro-guard/intro.guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToTabs = () => redirectLoggedInTo(['tabs']);
