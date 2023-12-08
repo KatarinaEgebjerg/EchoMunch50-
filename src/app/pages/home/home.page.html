@@ -150,7 +150,7 @@
                             </div>
                             <ion-buttons slot="end">
                               <ion-button
-                                (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
+                                (click)="!user? login() : favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
                                 aria-label="FavoriteButton"
                               >
                                 <ion-icon
