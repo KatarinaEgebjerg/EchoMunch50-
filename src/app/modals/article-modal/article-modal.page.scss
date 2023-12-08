@@ -11,3 +11,20 @@
     margin-left: 10%;
     margin-right: 10%;
   }
+
+  .image{
+    max-width: 476px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 2%;
+    border-radius: 50% !important;
+  }
+
+  
+
+  @media (min-width: 768px) {
+    .header{
+        margin-left: 10%;
+      }
+  
+}

@@ -1,30 +1,42 @@
 <ion-header [translucent]="true"> </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="tertiary" (click)="closeModal()" aria-label="Close">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+      </ion-button> </ion-buttons
+  ></ion-toolbar>
   <ion-header collapse="condense" class="header">
     <ion-title size="large">Making a succesful steak</ion-title>
   </ion-header>
   <ion-grid class="margin">
-    <ion-img src="../../../assets/images/steak.webp" alt="Steak"></ion-img>
+    <ion-img
+      src="../../../assets/images/Steak.webp"
+      alt="Steak"
+      class="image"
+    ></ion-img>
     <p>
-      Cooking a perfect steak involves precise technique and a touch of personal
-      flair. Here's a guide to help you master this culinary delight, with
-      measurements in Celsius and kilograms.
+      Cooking a perfect steak is an art that combines technique, timing, and a
+      touch of personal flair. Here's a comprehensive guide to help you master
+      this culinary delight.
     </p>
     <h2>Choosing the right steak</h2>
     <div id="list">
       <ul>
         <li>
-          Cut: Popular cuts include Ribeye, Sirloin, T-Bone, and Filet Mignon.
-          Ribeye offers a great balance of flavor and tenderness.
+          <span style="font-weight: bold">Cut:</span>Popular cuts include
+          Ribeye, Sirloin, T-Bone, and Filet Mignon. Ribeye offers a great
+          balance of flavor and tenderness.
         </li>
         <li>
-          Grade: Look for USDA grades like Prime, Choice, or Select. Prime is
-          the highest quality with the most marbling.
+          <span style="font-weight: bold">Grade:</span> Look for USDA grades
+          like Prime, Choice, or Select. Prime is the highest quality with the
+          most marbling.
         </li>
         <li>
-          Thickness: A steak should be at least 1 inch thick, ideally 1.5 to 2
-          inches for optimal cooking.
+          <span style="font-weight: bold">Thickness:</span> A steak should be at
+          least 1 inch thick, ideally 1.5 to 2 inches for optimal cooking.
         </li>
       </ul>
     </div>
@@ -32,16 +44,18 @@
     <div id="list">
       <ul>
         <li>
-          Thawing: If frozen, thaw your steak in the refrigerator for up to 48
-          hours.
+          <span style="font-weight: bold">Thawing:</span> If frozen, thaw your
+          steak in the refrigerator for up to 48 hours.
         </li>
         <li>
-          Room Temperature: Bring the steak to room temperature about 30 minutes
-          before cooking to ensure even cooking.
+          <span style="font-weight: bold"> Room Temperature:</span> Bring the
+          steak to room temperature about 30 minutes before cooking to ensure
+          even cooking.
         </li>
         <li>
-          Seasoning: Keep it simple with salt and pepper or get creative with
-          garlic powder, paprika, or your favorite steak rub. Apply generously.
+          <span style="font-weight: bold">Seasoning:</span> Keep it simple with
+          salt and pepper or get creative with garlic powder, paprika, or your
+          favorite steak rub. Apply generously.
         </li>
       </ul>
     </div>
@@ -49,16 +63,18 @@
     <div id="list">
       <ul>
         <li>
-          Pan Searing: Ideal for a crispy, caramelized crust. Use a cast-iron
-          skillet for the best results.
+          <span style="font-weight: bold">Pan Searing:</span> Ideal for a
+          crispy, caramelized crust. Use a cast-iron skillet for the best
+          results.
         </li>
         <li>
-          Grilling: Perfect for adding a smoky flavor. Make sure the grill is
-          hot before placing the steak on it.
+          <span style="font-weight: bold">Grilling:</span> Perfect for adding a
+          smoky flavor. Make sure the grill is hot before placing the steak on
+          it.
         </li>
         <li>
-          Oven Roasting: Best for thicker cuts. Start with a sear on the
-          stovetop, then finish in the oven
+          <span style="font-weight: bold">Oven Roasting:</span> Best for thicker
+          cuts. Start with a sear on the stovetop, then finish in the oven
         </li>
       </ul>
     </div>
@@ -66,22 +82,24 @@
     <div id="list">
       <ul>
         <li>
-          Heat the Pan: Preheat your skillet over high heat and add oil with a
-          high smoke point, like canola or grapeseed.
+          <span style="font-weight: bold">Heat the Pan:</span> Preheat your
+          skillet over high heat and add oil with a high smoke point, like
+          canola or grapeseed.
         </li>
         <li>
-          Cooking: Place the steak in the pan. Cook for about 4-5 minutes on
-          each side for medium-rare, adjusting the time based on thickness and
-          desired doneness.
+          <span style="font-weight: bold">Cooking:</span> Place the steak in the
+          pan. Cook for about 4-5 minutes on each side for medium-rare,
+          adjusting the time based on thickness and desired doneness.
         </li>
         <li>
-          Basting: Halfway through, add butter, garlic, and herbs (like rosemary
-          or thyme) to the pan. Spoon the melted butter over the steak
-          repeatedly.
+          <span style="font-weight: bold">Basting:</span> Halfway through, add
+          butter, garlic, and herbs (like rosemary or thyme) to the pan. Spoon
+          the melted butter over the steak repeatedly.
         </li>
         <li>
-          Resting: Once cooked to your liking, let the steak rest for about 10
-          minutes before slicing. This allows the juices to redistribute.
+          <span style="font-weight: bold">Resting:</span> Once cooked to your
+          liking, let the steak rest for about 10 minutes before slicing. This
+          allows the juices to redistribute.
         </li>
       </ul>
     </div>
@@ -89,36 +107,46 @@
     <div id="list">
       <ul>
         <li>
-          Preheat the Grill: Target a high temperature, around 230°C to 260°C.
+          <span style="font-weight: bold">Preheat the Grill:</span> Target a
+          high temperature, around 230°C to 260°C.
         </li>
         <li>
-          Grill the Steak: Cook for about 4-6 minutes per side for medium-rare,
-          depending on thickness.
+          <span style="font-weight: bold">Grill the Steak:</span> Cook for about
+          4-6 minutes per side for medium-rare, depending on thickness.
         </li>
-        <li>Resting: Allow the steak to rest as with pan searing.</li>
+        <li>
+          <span style="font-weight: bold">Resting:</span> Allow the steak to
+          rest as with pan searing.
+        </li>
       </ul>
     </div>
     <h2>Finishing touches</h2>
     <div id="list">
       <ul>
         <li>
-          Sauces and Butters: Try compound butter, steak sauce, or chimichurri.
+          <span style="font-weight: bold">Sauces and Butters:</span> Try
+          compound butter, steak sauce, or chimichurri.
         </li>
         <li>
-          Wine Pairing: A robust red wine like Cabernet Sauvignon or Malbec
-          pairs well.
+          <span style="font-weight: bold">Wine Pairing:</span> A robust red wine
+          like Cabernet Sauvignon or Malbec pairs well.
         </li>
         <li>
-          Sides: Consider roasted vegetables, mashed potatoes, or a fresh salad.
+          <span style="font-weight: bold">Sides:</span> Consider roasted
+          vegetables, mashed potatoes, or a fresh salad.
         </li>
       </ul>
     </div>
     <h2>Troubleshooting</h2>
     <div id="list">
       <ul>
-        <li>Uneven Cooking: Use a meat thermometer to check for doneness.</li>
         <li>
-          Too Much Smoke: Ensure good ventilation and adjust the heat if needed.
+          <span style="font-weight: bold">Uneven Cooking:</span> Use a meat
+          thermometer to check for doneness.
+        </li>
+        <li>
+          <span style="font-weight: bold">Too Much Smoke:</span> Ensure good
+          ventilation and adjust the heat if needed.
         </li>
       </ul>
     </div>
