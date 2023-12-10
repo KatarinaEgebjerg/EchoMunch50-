@@ -7,6 +7,17 @@ ion-avatar {
     --background: #f4f4f4 !important;
 }
 
+:host{
+    padding-inline: none;
+}
+
+.ion-text-center [_ngcontent-ng-c313017652] {
+    padding: none !important;
+}
+
+
+
+
 .favorite-dish-container {
     .dish-title-padding {
         padding-left: 15px;
@@ -24,7 +35,6 @@ ion-avatar {
         overflow: hidden;
         width: 140px;
         height: 140px;
-        border-radius: 50%;
     }
 
     .dish-bg-color {
@@ -42,6 +52,8 @@ ion-avatar {
 
     .truncate {
         word-break: break-word;
+        margin: 0px;
+        padding: none !important;
     }
 }
 
