@@ -35,6 +35,26 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   ],
 })
 export class UpdateUserModalPage {
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled')
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        this.deleteUser();
+        console.log('Alert confirmed')
+      },
+    },
+  ];
+  setResult(ev: Event){
+    console.log('Dismissed with role: $(ev.detail.role')
+  }
   user: any;
   originalUser: any;
   credentials: FormGroup | any;
@@ -185,6 +205,14 @@ export class UpdateUserModalPage {
       console.log('No user logged in')
     }
     });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Are you sure?',
+      buttons: this.alertButtons
+    });
+    await alert.present();
   }
 
 }
