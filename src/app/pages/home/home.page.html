@@ -11,8 +11,19 @@
       />
       <h2 class="logoText">Eco Munch</h2>
     </ion-buttons>
-
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" class="profilbuttons">
+      <ion-button
+        *ngIf="showBtn"
+        fill="clear"
+        slot="end"
+        (click)="login()"
+        color="tertiary"
+        aria-label="Login"
+        class="loginButton"
+      >
+        Login
+        <ion-icon name="Log-out-outline"></ion-icon>
+      </ion-button>
       <ion-button (click)="navigateToProfile()" aria-label="navigateToProfile">
         <ion-icon
           class="profileLogo"
@@ -139,7 +150,7 @@
                             </div>
                             <ion-buttons slot="end">
                               <ion-button
-                                (click)="favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
+                                (click)="!user? login() : favoriteStatus[meal.idMeal] ? removeFavorite(meal) : addFavorite(meal); $event.stopPropagation()"
                                 aria-label="FavoriteButton"
                               >
                                 <ion-icon

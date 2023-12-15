@@ -45,7 +45,7 @@ export class HomePage {
   recipeIngredients: any[] = [];
   ingredients: string[] = []; // All available ingredients
   filteredIngredients: string[] = []; // Ingredients that match the user's input
-
+  showBtn: boolean = true;
   constructor(
     private navCtrl: NavController,
     private mealService: MealService,
@@ -61,6 +61,7 @@ export class HomePage {
       this.user = user;
       if (user) {
         await this.getFavorites();
+        this.showBtn = false;
       }
     });
     this.http
@@ -197,6 +198,10 @@ export class HomePage {
 
   navigateToProfile() {
     this.navCtrl.navigateForward('tabs/home/profile');
+  }
+
+  login() {
+    this.navCtrl.navigateForward('login');
   }
 
   async presentToast(message: string) {

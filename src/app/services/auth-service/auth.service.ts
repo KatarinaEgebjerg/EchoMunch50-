@@ -19,11 +19,10 @@ import { getFirestore, doc, getDoc, setDoc } from '@angular/fire/firestore';
   providedIn: 'root',
 })
 export class AuthService {
-
   public currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private auth: Auth) {
-   onAuthStateChanged(this.auth, (user) => {
+    onAuthStateChanged(this.auth, (user) => {
       if (user) {
         // User is signed in, fetch their data
         this.getUser(user.uid).then((userData) => {
@@ -34,6 +33,15 @@ export class AuthService {
         this.currentUser.next(null);
       }
     });
+  }
+
+  isLoggedIn(): boolean {
+    const user = this.currentUser;
+    if (user === null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   async register({
@@ -119,7 +127,6 @@ export class AuthService {
       console.log('Error during Google login: ', error); // Log the error
       throw new Error('Google login failed. Please try again.');
     }
-    
   }
 
   async forgotPassword({ email }: { email: string }) {
@@ -206,7 +213,6 @@ export class AuthService {
       throw new Error(
         'An error occurred while updating the name. Please try again.'
       );
-      
     }
     return null; // Add this line
   }
@@ -217,5 +223,4 @@ export class AuthService {
       this.currentUser.next(userData);
     }
   }
-  
 }
