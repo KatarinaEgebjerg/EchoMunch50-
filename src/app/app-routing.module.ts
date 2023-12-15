@@ -65,6 +65,13 @@ const routes: Routes = [
         './modals/admin-edit-recipe-modal/admin-edit-recipe-modal.module'
       ).then((m) => m.AdminEditRecipeModalPageModule),
   },
+  {
+    path: 'article-modal',
+    loadChildren: () =>
+      import('./modals/article-modal/article-modal.module').then(
+        (m) => m.ArticleModalPageModule
+      ),
+  },
 ];
 
 @NgModule({
