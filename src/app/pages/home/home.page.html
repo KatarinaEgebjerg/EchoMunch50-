@@ -110,8 +110,8 @@
                       (click)="dishDetailsModal(meal)"
                       class="meal-dish-card meal-dish-card-height dish-bg-color"
                     >
-                      <ion-row class="ion-align-items-center full-height">
-                        <ion-col>
+                      <ion-row class="full-height i-no-padding">
+                        <ion-col class="ion-no-padding">
                           <img
                             class="rounded-dish-img"
                             [ngSrc]="meal.strMealThumb"
@@ -121,8 +121,8 @@
                             priority
                           />
                         </ion-col>
-                        <ion-col class="ion-text-center">
-                          <ion-card-header>
+                        <ion-col class="ion-text">
+                          <ion-card-header class="ion-no-padding">
                             <h3 class="dish-name-text truncate">
                               {{ truncateMealName(meal.strMeal, 15, 9) }}
                             </h3>
@@ -133,7 +133,7 @@
                                 style="margin-top: 15px"
                                 [src]="getCategoryIcon(meal.strCategory)"
                               ></ion-icon>
-                              <p class="dish-name-text" style="margin-top: 0px">
+                              <p class="dish-name-text Category" style="margin-top: 0px">
                                 {{ meal.strCategory }}
                               </p>
                             </div>
@@ -180,8 +180,8 @@
                         class="meal-dish-card meal-dish-card-height dish-bg-color"
                         (click)="dishDetailsModal(meal)"
                       >
-                        <ion-row class="ion-align-items-center full-height">
-                          <ion-col>
+                        <ion-row class="ion-align-items-center full-height" class="ion-no-padding">
+                          <ion-col class="ion-no-padding">
                             <img
                               class="rounded-dish-img"
                               [ngSrc]="meal.strMealThumb"
@@ -190,8 +190,8 @@
                               [height]="135"
                             />
                           </ion-col>
-                          <ion-col class="ion-text-center">
-                            <ion-card-header>
+                          <ion-col class="ion-text">
+                            <ion-card-header class="ion-no-padding">
                               <h3 class="dish-name-text truncate">
                                 {{ truncateMealName(meal.strMeal, 15, 9) }}
                               </h3>
@@ -199,13 +199,11 @@
                             <ion-toolbar class="gray-toolbar">
                               <div>
                                 <ion-icon
-                                  style="margin-top: 15px"
+                                  style="margin: 0px; padding-top: 10px;"
                                   [src]="getCategoryIcon(meal.strCategory)"
                                 ></ion-icon>
                                 <p
-                                  class="dish-name-text"
-                                  style="margin-top: 0px"
-                                >
+                                  class="dish-name-text Category">
                                   {{ meal.strCategory }}
                                 </p>
                               </div>

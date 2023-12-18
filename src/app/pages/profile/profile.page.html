@@ -213,9 +213,9 @@
                   class="rounded-dish-img"
                 />
               </ion-col>
-              <ion-col class="ion-text-center">
-                <ion-card-header>
-                  <h3 class="dish-name-text truncate">
+              <ion-col class="ion-text ion-no-padding">
+                <ion-card-header class="ion-no-padding">
+                  <h3 class="dish-name-text truncate" >
                     {{ truncateMealName(favorite.strMeal, 15, 9) }}
                   </h3>
                 </ion-card-header>
@@ -225,7 +225,7 @@
                       style="margin-top: 15px"
                       [src]="getCategoryIcon(favorite.strCategory)"
                     ></ion-icon>
-                    <p class="dish-name-text" style="margin-top: 0px">
+                    <p class="dish-name-text Category" style="margin-top: 0px">
                       {{ favorite.strCategory }}
                     </p>
                   </div>
