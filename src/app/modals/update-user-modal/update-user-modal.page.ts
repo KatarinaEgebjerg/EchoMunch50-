@@ -14,12 +14,14 @@ import {
   Validators,
 } from '@angular/forms';
 import {
+  AlertController,
   LoadingController,
   ModalController,
   NavParams,
   ToastController,
 } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-update-user-modal',
@@ -33,6 +35,26 @@ import { AuthService } from 'src/app/services/auth-service/auth.service';
   ],
 })
 export class UpdateUserModalPage {
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled')
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        this.deleteUser();
+        console.log('Alert confirmed')
+      },
+    },
+  ];
+  setResult(ev: Event){
+    console.log('Dismissed with role: $(ev.detail.role')
+  }
   user: any;
   originalUser: any;
   credentials: FormGroup | any;
@@ -45,7 +67,9 @@ export class UpdateUserModalPage {
     private authService: AuthService,
     private fb: FormBuilder,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private alertCtrl: AlertController,
+    private afAuth: AngularFireAuth
   ) {
     this.user = this.navParams.get('user');
     this.originalUser = { ...this.user }; // Create a copy of the user data
@@ -149,4 +173,46 @@ export class UpdateUserModalPage {
 
     return pass === confirmPass ? null : { notSame: true };
   }
+
+  async confirmDelete(){
+    const alert = await this.alertCtrl.create({
+      header: 'Confirm Delete',
+      message: 'Do you really want to delete your account?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.deleteUser();
+          }
+        }
+      ]
+    })
+  }
+
+  deleteUser(){
+    this.afAuth.currentUser.then(user => {
+      if (user) {
+      user.delete().then(() => {
+        console.log('Auccont deleted');
+      }).catch(error => {
+        console.error('Error deleting account:', error);
+      });
+    }else{
+      console.log('No user logged in')
+    }
+    });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Are you sure?',
+      buttons: this.alertButtons
+    });
+    await alert.present();
+  }
+
 }

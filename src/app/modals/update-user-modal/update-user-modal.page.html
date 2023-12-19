@@ -75,6 +75,9 @@
       </div>
 
       <ion-button expand="block" (click)="onSumbit()" aria-label="Save">Save</ion-button>
+      <ion-button expand="block" arial-label="Delete User" id="presentalert " (click)="presentAlert()" color="tertiary"> Delete User</ion-button>
+      <ion-alert trigger="present-alert" header="Are you sure?" [buttons]="alertButtons" (didDismiss)="setResult($event)">
+      </ion-alert>
     </form>
 
   </div>
