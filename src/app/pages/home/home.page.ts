@@ -17,6 +17,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 
 import { DishDetailsModalPage } from 'src/app/modals/dish-details-modal/dish-details-modal.page';
+import { ArticleModalPage } from 'src/app/modals/article-modal/article-modal.page';
 //https://www.themealdb.com/images/media/meals/
 @Component({
   selector: 'app-home',
@@ -89,6 +90,13 @@ export class HomePage {
       this.getFavorites();
     });
 
+    await modal.present();
+  }
+
+  async articleModal () {
+    const modal = await this.modalCtrl.create({
+      component: ArticleModalPage
+    });
     await modal.present();
   }
 
@@ -267,4 +275,5 @@ export class HomePage {
 
     return 'assets/icon/miscellaneous.svg';
   }
+
 }
