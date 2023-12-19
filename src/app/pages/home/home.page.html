@@ -121,8 +121,8 @@
                       (click)="dishDetailsModal(meal)"
                       class="meal-dish-card meal-dish-card-height dish-bg-color"
                     >
-                      <ion-row class="ion-align-items-center full-height">
-                        <ion-col>
+                      <ion-row class="full-height i-no-padding">
+                        <ion-col class="ion-no-padding">
                           <img
                             class="rounded-dish-img"
                             [ngSrc]="meal.strMealThumb"
@@ -132,8 +132,8 @@
                             priority
                           />
                         </ion-col>
-                        <ion-col class="ion-text-center">
-                          <ion-card-header>
+                        <ion-col class="ion-text">
+                          <ion-card-header class="ion-no-padding">
                             <h3 class="dish-name-text truncate">
                               {{ truncateMealName(meal.strMeal, 15, 9) }}
                             </h3>
@@ -144,7 +144,7 @@
                                 style="margin-top: 15px"
                                 [src]="getCategoryIcon(meal.strCategory)"
                               ></ion-icon>
-                              <p class="dish-name-text" style="margin-top: 0px">
+                              <p class="dish-name-text Category" style="margin-top: 0px">
                                 {{ meal.strCategory }}
                               </p>
                             </div>
@@ -191,8 +191,8 @@
                         class="meal-dish-card meal-dish-card-height dish-bg-color"
                         (click)="dishDetailsModal(meal)"
                       >
-                        <ion-row class="ion-align-items-center full-height">
-                          <ion-col>
+                        <ion-row class="ion-align-items-center full-height" class="ion-no-padding">
+                          <ion-col class="ion-no-padding">
                             <img
                               class="rounded-dish-img"
                               [ngSrc]="meal.strMealThumb"
@@ -201,8 +201,8 @@
                               [height]="135"
                             />
                           </ion-col>
-                          <ion-col class="ion-text-center">
-                            <ion-card-header>
+                          <ion-col class="ion-text">
+                            <ion-card-header class="ion-no-padding">
                               <h3 class="dish-name-text truncate">
                                 {{ truncateMealName(meal.strMeal, 15, 9) }}
                               </h3>
@@ -210,13 +210,11 @@
                             <ion-toolbar class="gray-toolbar">
                               <div>
                                 <ion-icon
-                                  style="margin-top: 15px"
+                                  style="margin: 0px; padding-top: 10px;"
                                   [src]="getCategoryIcon(meal.strCategory)"
                                 ></ion-icon>
                                 <p
-                                  class="dish-name-text"
-                                  style="margin-top: 0px"
-                                >
+                                  class="dish-name-text Category">
                                   {{ meal.strCategory }}
                                 </p>
                               </div>
@@ -426,6 +424,63 @@
           </ion-card-footer>
         </ion-card>
       </div>
+    </ion-grid>
+  </div>
+  
+  <div class="graphic">
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size-lg="12" size-sm="12">
+          <ion-img
+            src="assets/images/Boelge.png"
+            alt="graphic"
+            class="graphic"
+            width="100"
+            height="auto"
+          />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="container d-none" style="background-color: rgb(247, 248, 222)">
+    <ion-grid style="color: F4F7E0">
+      <ion-row style="padding: 5%; justify-content: center">
+        <ion-col size-lg="5" size-sm="12">
+          <ion-img
+            src="assets/images/ArticleCover.png"
+            alt="graphic"
+            class="graphic"
+            width="50"
+            height="auto"
+            class="ion-margin"
+          />
+        </ion-col>
+
+        <ion-col size-lg="5" size-sm="12">
+          <ion-row>
+            <h5 class="topics" style="color: rgb(207, 135, 51)">
+              Current topics
+            </h5>
+          </ion-row>
+          <ion-row>
+            <h2 class="topic title">Title</h2>
+          </ion-row>
+          <ion-row>
+            <p class="text">
+              Cooking a perfect steak is an art that combines technique, 
+              timing, and a touch of personal flair. 
+              Here's a comprehensive guide to help you master this culinary delight.
+            </p>
+            <p class="text" style="color: rgb(35, 79, 49)">
+              Read more<ion-icon
+                name="arrow-forward-outline"
+                style="color: coral" size="30px"
+              ></ion-icon>
+            </p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </div>
 </ion-content>

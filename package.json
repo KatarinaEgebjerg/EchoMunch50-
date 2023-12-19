@@ -11,7 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "explorer": "source-map-explorer www/main*.js"
+    "explorer": "source-map-explorer www/main*.js",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -s"
   },
   "private": true,
   "dependencies": {

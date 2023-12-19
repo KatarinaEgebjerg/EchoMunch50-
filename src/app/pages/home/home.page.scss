@@ -90,10 +90,6 @@ ion-searchbar {
     color: black !important;
   }
 
-  .rounded-dish-img {
-    border-radius: 50%;
-  }
-
   .dish-bg-color {
     background-color: #f4f4f4;
   }
@@ -138,4 +134,17 @@ ion-searchbar {
 
 ion-buttons {
   padding: 1em;
+}
+
+.dish-name-text {
+  padding-top: 20px !important;
+  margin: 0%;
+}
+.Category {
+  padding-top: 0px !important;
+  margin: 0%;
+}
+
+.ion-text{
+  padding: 0% !important;
 }
