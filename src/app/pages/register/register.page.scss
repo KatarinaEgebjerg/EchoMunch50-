@@ -1,4 +1,12 @@
 ion-content {
+  --background: url("../../../assets/images/bg.png") no-repeat 0 0 /100%;
+
+  @media (max-width: 1080px) {
+    --background: none;
+    .logoText {
+      display: none;
+    }
+  }
   .header {
     div {
       display: flex;

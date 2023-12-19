@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-button href="#home" aria-label="Eco Munch">
         <ion-img
-          src="assets/images/logo50.png"
+          src="assets/images/ecoLogo.png"
           alt="Eco munch logo"
           class="logo"
           srcset="assets/images/logo50.png w50 assets/images/logo75.png w75"
@@ -27,7 +27,13 @@
         <ion-breadcrumb href="#Profile"> Profile </ion-breadcrumb>
       </ion-breadcrumbs>
       <ion-buttons slot="end">
-        <ion-button fill="clear" slot="end" (click)="logout()" color="tertiary" aria-label="LogOut">
+        <ion-button
+          fill="clear"
+          slot="end"
+          (click)="logout()"
+          color="tertiary"
+          aria-label="LogOut"
+        >
           Logout
           <ion-icon name="Log-out-outline"></ion-icon>
         </ion-button>
@@ -42,7 +48,11 @@
           <ion-card style="background-color: #f4f4f4">
             <ion-toolbar class="gray-toolbar">
               <ion-buttons slot="end">
-                <ion-button fill="clear" (click)="updateUser()" aria-label="edit">
+                <ion-button
+                  fill="clear"
+                  (click)="updateUser()"
+                  aria-label="edit"
+                >
                   <h3>Edit</h3>
                   <ion-icon
                     size="medium"
@@ -122,12 +132,12 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-            <ion-skeleton-text
-              animated
-              class="skeleton-heart"
-            ></ion-skeleton-text>
+          <ion-skeleton-text
+            animated
+            class="skeleton-heart"
+          ></ion-skeleton-text>
         </ion-card>
-  
+
         <ion-card class="loadcard">
           <ion-grid>
             <ion-row>
@@ -151,12 +161,12 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-            <ion-skeleton-text
-              animated
-              class="skeleton-heart"
-            ></ion-skeleton-text>
+          <ion-skeleton-text
+            animated
+            class="skeleton-heart"
+          ></ion-skeleton-text>
         </ion-card>
-  
+
         <ion-card class="loadcard">
           <ion-grid>
             <ion-row>
@@ -180,10 +190,10 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-            <ion-skeleton-text
-              animated
-              class="skeleton-heart"
-            ></ion-skeleton-text>
+          <ion-skeleton-text
+            animated
+            class="skeleton-heart"
+          ></ion-skeleton-text>
         </ion-card>
       </div>
 

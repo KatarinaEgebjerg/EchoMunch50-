@@ -1,4 +1,12 @@
 ion-content {
+  --background: url("../../../assets/images/bg.png") no-repeat 0 0 /100%;
+
+  @media (max-width: 1080px) {
+    --background: none;
+    .logoText {
+      display: none;
+    }
+  }
   .page-container {
     padding: 20px;
   }
@@ -8,6 +16,10 @@ ion-content {
     margin: 0 auto;
     width: 101px;
     height: 101px;
+  }
+  .logoButton {
+    justify-content: center;
+    border-radius: 50%;
   }
 
   @media (min-width: 768px) {
@@ -25,7 +37,8 @@ ion-content {
       padding-left: 35%;
       padding-right: 35%;
     }
-    .logo {
+    .logoButton {
+      justify-content: normal;
       margin-left: 4.5rem;
     }
   }
