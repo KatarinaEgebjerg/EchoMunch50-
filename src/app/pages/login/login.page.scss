@@ -7,20 +7,45 @@ ion-content {
       display: none;
     }
   }
+
+  @media (max-width: 768px) {
+
+    ion-buttons {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+      margin-top: 0;
+    }
+    .logoText{
+      display: none;
+    }
+  }
+
   .page-container {
     padding: 20px;
   }
 
-  ion-img {
-    display: block;
-    margin: 0 auto;
-    width: 101px;
-    height: 101px;
+   .header {
+    div {
+      display: flex;
+      align-items: baseline;
+      margin-left: 7.5rem;
+      margin-top: 1rem;
+      justify-content: left;
+    }
+    ion-img{
+      width: 101px;
+      height: 101px;
+      margin-left: 2rem;
+    }
+    .logoText{
+      color: #2e4e2b;
+      margin-left: 10px;
+    }
   }
-  .logoButton {
-    justify-content: center;
-    border-radius: 50%;
-  }
+
+
+
 
   @media (min-width: 768px) {
     .form-container {
@@ -42,6 +67,8 @@ ion-content {
       margin-left: 4.5rem;
     }
   }
+
+  
 
   .form-container {
     padding-top: 20px;
