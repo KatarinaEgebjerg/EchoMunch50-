@@ -1,14 +1,18 @@
-<ion-content [fullscreen]="true">
+<ion-content class="ion-no-padding">
+  <ion-header class="ion-no-border header">
+    <div>
+      <ion-img
+        src="assets/images/ecoLogo.png"
+        alt="Eco munch logo"
+        class="logo"
+        srcset="assets/images/logo50.png w50 assets/images/logo75.png w75"
+        width="50"
+        height="53"
+      />
+      <h2 class="logoText">Eco Munch</h2>
+    </div>
+  </ion-header>
   <div class="page-container">
-    <ion-buttons slot="start">
-      <ion-button href="#login" aria-label="Eco Munch">
-        <ion-img
-          src="../../../assets/images/ecoLogo.png"
-          alt="Eco munch logo"
-          class="logo"
-        />
-      </ion-button>
-    </ion-buttons>
 
     <form class="form-container" (ngSubmit)="login()" [formGroup]="credentials">
       <ion-text>

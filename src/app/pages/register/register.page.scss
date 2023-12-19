@@ -1,14 +1,24 @@
 ion-content {
+  --background: url("../../../assets/images/bg.png") no-repeat 0 0 /100%;
+
+  @media (max-width: 1080px) {
+    --background: none;
+    .logoText {
+      display: none;
+    }
+  }
   .header {
     div {
       display: flex;
       align-items: baseline;
       margin-left: 7.5rem;
       margin-top: 1rem;
+      justify-content: left;
     }
     ion-img {
       width: 101px;
       height: 101px;
+      margin-left: 2rem;
     }
     .logoText {
       color: #2e4e2b;
@@ -46,7 +56,13 @@ ion-content {
       margin-left: 30%;
       margin-right: 30%;
     }
+    ion-toolbar {
+      transform: translate(130px, -10px);
+      position: absolute;
+    }
   }
+
+
   .form-container {
     padding-top: 20px;
     .input-container {

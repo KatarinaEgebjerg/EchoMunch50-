@@ -25,8 +25,7 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-
-@import url('https://fonts.googleapis.com/css?family=Italiana|Jost&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Italiana|Jost&display=swap");
 
 h1,
 h2,
@@ -34,91 +33,101 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'jost', sans-serif;
+  font-family: "jost", sans-serif;
 }
 
 h1 {
-    font-size: 30px !important;
-    font-weight: 700 !important;
-    color: #2E4E2B;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: #2e4e2b;
 }
 
 h2 {
-    font-size: 25px;
-    font-weight: 700;
-    color: #2E4E2B;
+  font-size: 25px;
+  font-weight: 700;
+  color: #2e4e2b;
 }
 
 h3 {
-    font-size: 25px;
-    font-weight: 700;
-    color: #CC5500;
+  font-size: 25px;
+  font-weight: 700;
+  color: #cc5500;
 }
 
 p {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 1.12px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.12px;
 }
 
 span {
-    font-weight: 600;
-    letter-spacing: 1.12px;
+  font-weight: 600;
+  letter-spacing: 1.12px;
 }
 
 ion-button {
-    color: #FFFF;
-    font-family: 'jost', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    --border-radius: 10px;
-    --padding-top: 20px;
-    --padding-bottom: 20px;
+  color: #ffff;
+  font-family: "jost", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  --border-radius: 10px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
 }
 
 swiper-container {
-    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, black);
-    --swiper-pagination-color: var(--ion-color-primary, #3880ff);
-    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
-    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
-    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+  --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, black);
+  --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+  --swiper-pagination-bottom: 0px;
+  --swiper-pagination-progressbar-bg-color: rgba(
+    var(--ion-text-color-rgb, 0, 0, 0),
+    0.25
+  );
+  --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(
+    var(--ion-text-color-rgb, 0, 0, 0),
+    0.5
+  );
 }
 
 ion-toolbar {
-    --background: white !important;
+  --background: white !important;
 }
 
 .page-container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .my-modal::part(content) {
-    width: 80%;
-    --border-radius: 10px;
-    --height: 35%;
+  width: 80%;
+  --border-radius: 10px;
+  --height: 35%;
 }
 
 .dish-detail-modal::part(content) {
-    width: 90%;
-    --border-radius: 10px;
-    height: 95%;
+  width: 90%;
+  --border-radius: 10px;
+  height: 95%;
 }
 
 .admin-modal::part(content) {
-    width: 90%;
-    --border-radius: 10px;
-    height: 95%;
+  width: 90%;
+  --border-radius: 10px;
+  height: 95%;
+}
+.swiper-pagination {
+  padding-top: 20px;
 }
 
 @font-face {
-    font-family: 'Jost', serif;
-    src: url('https://fonts.googleapis.com/css?family=Italiana|Jost&display=swap');
+  font-family: "Jost", serif;
+  src: url("https://fonts.googleapis.com/css?family=Italiana|Jost&display=swap");
 }
 
 :root,
 :root[mode="ios"],
 :root[mode="md"] {
-    --ion-font-family: 'Jost', serif !important;
-    font-family: 'Jost', serif !important;
+  --ion-font-family: "Jost", serif !important;
+  font-family: "Jost", serif !important;
 }
