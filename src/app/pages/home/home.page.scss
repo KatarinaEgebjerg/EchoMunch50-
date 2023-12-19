@@ -82,6 +82,10 @@ ion-searchbar {
     padding-left: 15px;
   }
 
+  h2 {
+    margin-left: 0.8rem;
+  }
+
   .meal-dish-card {
     margin-top: 0px;
   }
@@ -145,6 +149,12 @@ ion-buttons {
   margin: 0%;
 }
 
-.ion-text{
+.ion-text {
   padding: 0% !important;
+}
+.articleRow {
+  .arcleButton {
+    padding: 0 0 0 0;
+    margin-left: -10px;
+  }
 }
